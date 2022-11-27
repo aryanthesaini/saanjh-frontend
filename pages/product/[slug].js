@@ -193,8 +193,7 @@ const Slug = ({ product, addToCart }) => {
 export async function getServerSideProps(context) {
   //   console.log(context.query);
   let headers = {
-    Authorization:
-      'Bearer e29791c82c4cefb0a3a35aff2ed3fc5f86b86785e3ccd8d9cfcd615fd621f5fa62b00299422e7898b9e70aaf1e9ec9ec4f37df75bd084461ccbf1683c86e787790b876bbc0f27717a121c17f2099a663f13b780763dc16587ed8d364951b8813df4662e73a929c6aa2fa274e0aeb7063f461524e1d4dc118b1a76ff9ab985295',
+    Authorization: `Bearer ${ADMIN_TOKEN}`,
   };
   let a = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/products?filters[slug]=` +

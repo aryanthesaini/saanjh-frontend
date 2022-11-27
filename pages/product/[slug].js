@@ -193,7 +193,7 @@ const Slug = ({ product, addToCart }) => {
 export async function getServerSideProps(context) {
   //   console.log(context.query);
   let headers = {
-    Authorization: `Bearer ${ADMIN_TOKEN}`,
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_ADMIN_TOKEN}`,
   };
   let a = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/products?filters[slug]=` +

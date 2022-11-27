@@ -28,7 +28,7 @@ const Products = (props) => {
                       className='h-60 rounded w-full object-cover object-center mb-6'
                       src={
                         item.attributes.image.data &&
-                        `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.attributes.image.data.attributes.url}`
+                        `${item.attributes.image.data.attributes.name}`
                       }
                       alt={item.attributes.title}
                     />
@@ -60,7 +60,7 @@ const Products = (props) => {
 
 export async function getServerSideProps(context) {
   let headers = {
-    Authorization:`${ADMIN_TOKEN}`,
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_ADMIN_TOKEN}`,
   };
   let a = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/products?populate=*`,
@@ -69,7 +69,7 @@ export async function getServerSideProps(context) {
     }
   );
   let products = await a.json();
-  // console.log(products);
+
   return {
     props: { products },
   };

@@ -38,7 +38,7 @@ const Checkout = ({ cart }) => {
     });
     const content = await rawResponse.json();
 
-    console.log(content);
+    // console.log(content);
 
     var config = {
       root: '',
@@ -51,9 +51,9 @@ const Checkout = ({ cart }) => {
       },
       handler: {
         notifyMerchant: function (eventName, data) {
-          console.log('notifyMerchant handler function called');
-          console.log('eventName => ', eventName);
-          console.log('data => ', data);
+          // console.log('notifyMerchant handler function called');
+          // console.log('eventName => ', eventName);
+          // console.log('data => ', data);
         },
       },
     };

@@ -14,7 +14,7 @@ const Slug = ({ product, addToCart }) => {
               className='lg:w-1/2 w-full lg:h-auto h-34  rounded-3xl'
               src={
                 product.attributes.image.data &&
-                `${process.env.NEXT_PUBLIC_STRAPI_URL}${product.attributes.image.data.attributes.url}`
+                `${product.attributes.image.data.attributes.name}`
               }
               alt={product.attributes.title}
             />

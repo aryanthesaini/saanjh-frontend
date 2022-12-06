@@ -69,7 +69,7 @@ export async function getServerSideProps(context) {
     }
   );
   let products = await a.json();
-  console.lo
+  // console.log(products);
 
   return {
     props: { products },

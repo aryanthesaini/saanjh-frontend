@@ -15,9 +15,9 @@ const NavBar = ({ cart }) => {
             <Link href='/' className='mr-5 hover:text-gray-900'>
               Home
             </Link>
-            <Link href='/about' className='mr-5 hover:text-gray-900'>
+            {/* <Link href='/about' className='mr-5 hover:text-gray-900'>
               About
-            </Link>
+            </Link> */}
             <Link href='/products' className='mr-5 hover:text-gray-900'>
               Products
             </Link>

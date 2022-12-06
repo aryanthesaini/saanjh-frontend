@@ -2,8 +2,11 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Slug = ({ product, addToCart }) => {
   const router = useRouter();
+  const notify = () => toast.success('Item added to cart');
   const { slug } = router.query;
   return (
     <div>
@@ -170,10 +173,12 @@ const Slug = ({ product, addToCart }) => {
                 <button
                   onClick={() => {
                     addToCart(slug, 1, product.attributes.price);
+                    notify();
                   }}
                   className='inline-block px-6 py-3 mr-4 border-2 border-blue-500 text-blue-500 font-medium text-xs leading-tight uppercase rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out mt-2'>
                   Add to cart{' '}
                 </button>
+                <ToastContainer />
                 <button
                   onClick={() => {
                     router.push('/checkout');
